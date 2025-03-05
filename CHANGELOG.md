@@ -1,5 +1,211 @@
 # Changelog
 
+## [6.0.0](https://github.com/edogggy/aeproject/compare/v5.0.0...v6.0.0) (2025-03-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* update to sdk 14
+* drop custom get function, require node >= 18
+* drop cjs support
+* use sdk provided filesystem util, remove aeproject util implementation
+* improve update from previous aeproject version
+* use calldata lib sdk, use snapshotting in tests
+* **tx-inspector:** refactor inspector command
+* cleanup code
+* **init:** init command adjustments
+* prepare for new project structure
+
+### Features
+
+* add ceres initializer and docs ([0721822](https://github.com/edogggy/aeproject/commit/072182206b07901b79ba1e18cde0462ad1789911))
+* add image versions in env --info ([d2c9ba8](https://github.com/edogggy/aeproject/commit/d2c9ba822d091a91759376f4078285bcb220e3c9))
+* add support for node v6.8.0 ([b6b97cd](https://github.com/edogggy/aeproject/commit/b6b97cda85759b83ebf6d57bf8728ee96261be64))
+* adjust for sdk 12 usage ([5fda5f2](https://github.com/edogggy/aeproject/commit/5fda5f278a4304629642286f2bd7322c823ddf7b))
+* allow rollback to specific height ([670c11e](https://github.com/edogggy/aeproject/commit/670c11e440c38b88cd08428e059392bd05166f63))
+* allow usage of native docker-compose without specifying env ([f8577e2](https://github.com/edogggy/aeproject/commit/f8577e270bb6f664180114a3f39e9b5b7f323b98))
+* default to use ceres ([104cbe4](https://github.com/edogggy/aeproject/commit/104cbe4b3b7224a9c7cddd8236096339d25db26c))
+* **env:** abort tests if env is not running ([fb780c6](https://github.com/edogggy/aeproject/commit/fb780c608478075bf168cdeac182ac4c33c488f7))
+* generate .gitignore ([eecf555](https://github.com/edogggy/aeproject/commit/eecf555d9e475ade17292390bb5f16ab549c176e))
+* **init:** add optional folder parameter to init ([ad00bea](https://github.com/edogggy/aeproject/commit/ad00bea1e689f0a0d425598775c6a8a4669ebbab))
+* **init:** check for up-to-date nodejs version ([66edcf4](https://github.com/edogggy/aeproject/commit/66edcf4594218c318a71074f82854c194ec3928f))
+* **lib:** add all accounts to default client ([f97e992](https://github.com/edogggy/aeproject/commit/f97e9925c1a60bcb51a03ee0009859f140f167ca))
+* sdk 11 upgrade ([#408](https://github.com/edogggy/aeproject/issues/408)) ([44ff5db](https://github.com/edogggy/aeproject/commit/44ff5dbcae0343cd83d831a3729b48e254d7a803))
+* **test:** better example test and contract ([f98e1df](https://github.com/edogggy/aeproject/commit/f98e1df95870aea143c67affd3806e89d8e82306))
+* upgrade to compiler 7.4.0 ([72cccf7](https://github.com/edogggy/aeproject/commit/72cccf77a7a157e48b7f364a548105c3f6206252))
+* upgrade to compiler image 7.3.0 for ARM64/Apple Silicon support ([83814e2](https://github.com/edogggy/aeproject/commit/83814e276d4e7e71599274f89053bfada6da7703))
+* upgrade to sdk 12 ([8f8de6f](https://github.com/edogggy/aeproject/commit/8f8de6f408acf70ff26d7fb57360860c8f87e839))
+* upgrade to sdk 13 beta and compiler 7 ([0b717a5](https://github.com/edogggy/aeproject/commit/0b717a5f3a62a0ca8f03c4f327e2ac4760bd067b))
+* use updated sdk and rollback http usage ([1dc45f2](https://github.com/edogggy/aeproject/commit/1dc45f2d1bd3f6821b398f74d0b2c47639721320))
+
+
+### Bug Fixes
+
+* add back wait additional block workaround ([1a135b4](https://github.com/edogggy/aeproject/commit/1a135b46af5984047eaa42e5d81609fcbabc7b0d))
+* add debug await key block after creating snapshot ([53fa2f9](https://github.com/edogggy/aeproject/commit/53fa2f9c5d15b116de531f5421eb5b4140719a3f))
+* add missing stdlib includes in getFilesystem ([c29ae0d](https://github.com/edogggy/aeproject/commit/c29ae0d089991acc682853708a78fc8ca227287a))
+* add support for docker compose without minus ([6e44339](https://github.com/edogggy/aeproject/commit/6e44339d95b7273245f489961103d70fe36ff885))
+* build artifact files ([f4059cd](https://github.com/edogggy/aeproject/commit/f4059cda07c51c6e13ca0c899b40b1867549e420))
+* check for actually supported node &gt;= 16 requirement ([f50464e](https://github.com/edogggy/aeproject/commit/f50464e59b57d7f9d93ab11114274f316cf1acc0))
+* consider env running check if any container is up ([deaf578](https://github.com/edogggy/aeproject/commit/deaf578aad710911a50cb67fe69d03c6fb5ce150))
+* correct escaping to use - in filesystem contracts ([3704bab](https://github.com/edogggy/aeproject/commit/3704bab7f266ae81746770116d682639af5f5fc1))
+* define `getSdk` options type ([a84f9c8](https://github.com/edogggy/aeproject/commit/a84f9c84d31484d68618b920824c5cbad78786df))
+* docker image version with env var ([a340c7d](https://github.com/edogggy/aeproject/commit/a340c7d84bc024266d738538eb9d8bc019c103b4))
+* docker-compose v2 up/running check ([7d1d37a](https://github.com/edogggy/aeproject/commit/7d1d37a1a7d147b75b534166a86d0a714681c934))
+* fix breaking changes for sdk 12 usage ([357c3d5](https://github.com/edogggy/aeproject/commit/357c3d5ad010f399ab3b7fa20f5e30ccc11ab462))
+* fix dependencies upgrade, prepare for 4.1.1 release ([58a83ab](https://github.com/edogggy/aeproject/commit/58a83ab26b6fb5456150d06745ef95d87b6e81e0))
+* fix support for docker compose without minus ([84561fe](https://github.com/edogggy/aeproject/commit/84561feb0f6e9dcab33a25814048346009c747ea))
+* incorrect default includes regex fix (resolves [#394](https://github.com/edogggy/aeproject/issues/394)) ([d81fc8a](https://github.com/edogggy/aeproject/commit/d81fc8ab8ba8270ba3428baec5b36d025e50a165))
+* install sdk@14 in dependent projects ([68e05c3](https://github.com/edogggy/aeproject/commit/68e05c3dd7704cab8fdec88e1aa3df4f177521cd))
+* minor fixes, adjust docs ([abaa364](https://github.com/edogggy/aeproject/commit/abaa36460466ece306d0f31d23901d3b22fb0bee))
+* publish ([c11f856](https://github.com/edogggy/aeproject/commit/c11f8561eeb462b0ea1c0849b147f900130db794))
+* remove log for docker compose checks ([b372d69](https://github.com/edogggy/aeproject/commit/b372d696e51da11b12517cca402e70720d661592))
+* require node@18 as per release notes ([743ee8f](https://github.com/edogggy/aeproject/commit/743ee8fab07a2eccde449e64463d292a32c632f0))
+* rollback to correct height ([17a8262](https://github.com/edogggy/aeproject/commit/17a8262906a8436d3b51d0a522a0aacb227e2f5f))
+* sdk import usage ([5609660](https://github.com/edogggy/aeproject/commit/5609660dfb852c022351d1077265e109a77ad452))
+* set default image version after update (init cmd) ([7bd16fd](https://github.com/edogggy/aeproject/commit/7bd16fd559a887264cfeb10daad8ace65cac7bf4))
+* use fixed compiler version as latest is not supported by sdk ([945e3a5](https://github.com/edogggy/aeproject/commit/945e3a59051f193d07d603f8294cade954623b36))
+* use specific version of node to fix tests ([53a2446](https://github.com/edogggy/aeproject/commit/53a2446b37e615166c71e4cdbdcfc9f172c0823c))
+* verify compiler error message correctly after changes ([b0b902f](https://github.com/edogggy/aeproject/commit/b0b902f9b026989c8114daa3fbeb1860a47bb1c3))
+
+
+### CI / CD
+
+* add matrix for compiler/node versions ([c6c7ea4](https://github.com/edogggy/aeproject/commit/c6c7ea46fe18cde0fda1132401c81addf5ef9f01))
+* fix workflow for incompatible versions ([e2080d2](https://github.com/edogggy/aeproject/commit/e2080d2f07a00e386b4f808b10fbe235edf6684b))
+* skip certain tests for aux ci runs ([e41d0b7](https://github.com/edogggy/aeproject/commit/e41d0b71634f29c197f36b45529b0c89747530b1))
+* use matrix test suite ([0be215e](https://github.com/edogggy/aeproject/commit/0be215e812b31c38bae8e6a8490e1efb28f493b3))
+
+
+### Testing
+
+* add library usage tests ([cd81972](https://github.com/edogggy/aeproject/commit/cd819723af43750baf4c3f9b73ceda8099b16a25))
+* improved exec env, assert env and test results ([a79bcf3](https://github.com/edogggy/aeproject/commit/a79bcf3d2b0d0a79073ec8c742140f4b01a67fae))
+* improved exec env, assert file existence ([a9a96e1](https://github.com/edogggy/aeproject/commit/a9a96e13e43ce4de938cb2ef4b692d5fa394483c))
+* link to use local aeproject utils ([e058b54](https://github.com/edogggy/aeproject/commit/e058b54fe79972999a61aaee06ceae6b568a1b59))
+
+
+### Refactorings
+
+* drop cjs support ([a92df6e](https://github.com/edogggy/aeproject/commit/a92df6ebf2cb594a54425f79499673a8dc6028dc))
+* drop custom get function, require node &gt;= 18 ([ef569b9](https://github.com/edogggy/aeproject/commit/ef569b9efff27d073575f42caad628b55a607646))
+* improve env command ([18022a4](https://github.com/edogggy/aeproject/commit/18022a40765808643e6607020372720d44709502))
+* improve library typescript defs ([30a83f8](https://github.com/edogggy/aeproject/commit/30a83f819101eb243c713016b3aaa547e8cfc53b))
+* improve update from previous aeproject version ([d71bfe8](https://github.com/edogggy/aeproject/commit/d71bfe85aeb737c3cfa2cb5b3ded131a68e289cc))
+* init command to take current aeproject library version ([124e8c9](https://github.com/edogggy/aeproject/commit/124e8c96fdc28fdd34c3935bda634cd69e655ed7))
+* **init:** init command adjustments ([8f2f47d](https://github.com/edogggy/aeproject/commit/8f2f47df0f82cf134da1712e582a05eeef5b0854))
+* optimize docker healthcheck ([77f7506](https://github.com/edogggy/aeproject/commit/77f750628ebc77e98b1240568cec10e2797e5f35))
+* prepare for new project structure ([64d58d0](https://github.com/edogggy/aeproject/commit/64d58d0764537887042ab6d3d4e26ea59b63e194))
+* promisify instead promisify-child-process ([#517](https://github.com/edogggy/aeproject/issues/517)) ([ed3fdaf](https://github.com/edogggy/aeproject/commit/ed3fdaf0b9029cdf7c3232561bbeba34f5037b98))
+* remove the need for axios ([ed6cea0](https://github.com/edogggy/aeproject/commit/ed6cea077395631f47fb64f73e613b637ea77eed))
+* remove unused `config`, `getNetwork` in internal utils ([dddd2a0](https://github.com/edogggy/aeproject/commit/dddd2a06bbe2b2b7578f35cc31c29594c3f666eb))
+* replace chai/mocha with vitest ([eb717e5](https://github.com/edogggy/aeproject/commit/eb717e5b8319747607805f6e25520ad0455f222d))
+* simplify `getFilesystem` regexes ([61e4dbc](https://github.com/edogggy/aeproject/commit/61e4dbcd7e165bdbfb3350f244560e9bafc80218))
+* simplify package exports ([f63f3b4](https://github.com/edogggy/aeproject/commit/f63f3b420c48abc0e00b98f90e002f09c49f38ed))
+* **tx-inspector:** refactor inspector command ([b500968](https://github.com/edogggy/aeproject/commit/b5009686dc38101f249404b45023d275f6aad8aa))
+* update to sdk 14 ([ecbdf3c](https://github.com/edogggy/aeproject/commit/ecbdf3c222e72f644eb4790a528175f33231ffd3))
+* use calldata lib sdk, use snapshotting in tests ([0c6d010](https://github.com/edogggy/aeproject/commit/0c6d0104b0e289ebdcc5d98b06108158362400e6))
+* use fs.cp instead of own implementation ([#515](https://github.com/edogggy/aeproject/issues/515)) ([9f8ccce](https://github.com/edogggy/aeproject/commit/9f8ccce3fe00b6f507e6cd9fda49fcf285e27244))
+* use sdk provided filesystem util, remove aeproject util implementation ([93cf8c5](https://github.com/edogggy/aeproject/commit/93cf8c500db77ee2a108d90befd63f27cf4f5a81))
+* use sdk-default polling intervals (0 for ae_dev) ([fa990be](https://github.com/edogggy/aeproject/commit/fa990bebeb433707536492d99eec2a863d1f0675))
+* use typescript to build project, migrate lib to ts ([1f7a164](https://github.com/edogggy/aeproject/commit/1f7a164d60443bc8cbb8b04b93959c452de6f7e2))
+
+
+### Miscellaneous
+
+* adapt to naming convention of sdk examples ([3d22a19](https://github.com/edogggy/aeproject/commit/3d22a19ea787351abc8b68dba2d92bc6b609b7bf))
+* add chai as promised test rejection example ([6a0d491](https://github.com/edogggy/aeproject/commit/6a0d491c8cdbe8668fc0ef07aa0ccc4de40539a6))
+* beta 5 release ([8afb026](https://github.com/edogggy/aeproject/commit/8afb026ef9b760621cf8160cf9f90018362dd032))
+* beta 6 release ([1bc12bb](https://github.com/edogggy/aeproject/commit/1bc12bbdcf113da768b481011c4c52806fe1ed8a))
+* clean unused code and formatting ([11ba445](https://github.com/edogggy/aeproject/commit/11ba44524b863373d310e676016f87cb3f085c8b))
+* cleanup code ([2244394](https://github.com/edogggy/aeproject/commit/2244394d47f288345dab72136a8eb6ba185b11d1))
+* cleanup folders ([46d73f3](https://github.com/edogggy/aeproject/commit/46d73f3043acb1a9180c40fb0f0150be291c11d4))
+* **deps:** bump mkdocs version from 1.2.3 to 1.2.4 ([59bbded](https://github.com/edogggy/aeproject/commit/59bbdedac9e66f6ccb8402f2536349f4ef200b6d))
+* **deps:** mkdocs version update ([138e5b5](https://github.com/edogggy/aeproject/commit/138e5b5bfc02dadd8cf890cea6043cb10873933f))
+* **deps:** sdk v11.0.1 ([90d9cf6](https://github.com/edogggy/aeproject/commit/90d9cf6b41c04512ebd40f9af218b2a6ace12658))
+* document and improve release process ([b302647](https://github.com/edogggy/aeproject/commit/b302647f548aa6e22f7c384abe2c4247a4e63cb8))
+* fix scripts, prepare for 4.6.3 ([06ea397](https://github.com/edogggy/aeproject/commit/06ea397f3ac0b585ee54ca82e8868538c84db02c))
+* fix typos ([fad6c64](https://github.com/edogggy/aeproject/commit/fad6c64551262289865df4aa5e696f327c2b0418))
+* improve env initialisation and test setup ([d39e5d4](https://github.com/edogggy/aeproject/commit/d39e5d4a1492279f7cf9707f2300a84fd2117358))
+* introduce prettier ([388f867](https://github.com/edogggy/aeproject/commit/388f867ab40bc1fee00011f52e29c1a41b915833))
+* **main:** release 4.0.0 ([2156b96](https://github.com/edogggy/aeproject/commit/2156b96811fe26d014e3315754e3296286f5b311))
+* **main:** release 4.1.0 ([d696301](https://github.com/edogggy/aeproject/commit/d696301c2f8f66719117631663ef102b5cd36de3))
+* **main:** release 4.1.1 ([92fec89](https://github.com/edogggy/aeproject/commit/92fec89454d7e0d2b9c9ecec1257e7d866bc7956))
+* **main:** release 4.1.2 ([2ba0293](https://github.com/edogggy/aeproject/commit/2ba029394e4d6ea0843817700cce50b20a8cc668))
+* **main:** release 4.1.3 ([b3bbcaa](https://github.com/edogggy/aeproject/commit/b3bbcaaab755c75308e85723a93c8b89517b0fc4))
+* **main:** release 4.1.4 ([5f4cd2c](https://github.com/edogggy/aeproject/commit/5f4cd2c3afe7b15e016079ec29d625cefc12b504))
+* **main:** release 4.1.5 ([038ac5e](https://github.com/edogggy/aeproject/commit/038ac5eacf62f691313eb389db17d7b4eafb5ddc))
+* **main:** release 4.10.0 ([#509](https://github.com/edogggy/aeproject/issues/509)) ([f471908](https://github.com/edogggy/aeproject/commit/f4719088d1a40528608cfb16b97c0f19d1cba08e))
+* **main:** release 4.10.1 ([#511](https://github.com/edogggy/aeproject/issues/511)) ([30bb694](https://github.com/edogggy/aeproject/commit/30bb694afb7cb828ed646f667f63afba9744ee71))
+* **main:** release 4.10.2 ([#512](https://github.com/edogggy/aeproject/issues/512)) ([e3dfd17](https://github.com/edogggy/aeproject/commit/e3dfd170620fe6024812749df79c63b8541c266d))
+* **main:** release 4.2.0 ([ac42588](https://github.com/edogggy/aeproject/commit/ac425884d3fd47efdee000c2f3d0b1123af7e4e2))
+* **main:** release 4.2.1 ([533814c](https://github.com/edogggy/aeproject/commit/533814cf63e98d5afaa319859ed2594d4d6b3f38))
+* **main:** release 4.3.0 ([111b23b](https://github.com/edogggy/aeproject/commit/111b23beb361500cc4f55a1229cb6b1a1a565b98))
+* **main:** release 4.4.0 ([f7f6c02](https://github.com/edogggy/aeproject/commit/f7f6c02d6de279b1923f37a77f9f78df3cfaccc9))
+* **main:** release 4.5.0 ([3e8d74e](https://github.com/edogggy/aeproject/commit/3e8d74e22deb032c1db3f7f99ba0921c9af0343c))
+* **main:** release 4.5.1 ([4cb5e30](https://github.com/edogggy/aeproject/commit/4cb5e30f9a1abd50d151a3abf58df7c03897ad75))
+* **main:** release 4.6.0 ([2793a58](https://github.com/edogggy/aeproject/commit/2793a58e751e5c17a1d21d900e058c1266a426cf))
+* **main:** release 4.6.1 ([0018c0a](https://github.com/edogggy/aeproject/commit/0018c0a6be8fcfc6f0961e5521101de9cf32e889))
+* **main:** release 4.6.2 ([885e9cf](https://github.com/edogggy/aeproject/commit/885e9cfdbd5c9da338644afe7d8bdaab2666f8d9))
+* **main:** release 4.6.3 ([ff9cf08](https://github.com/edogggy/aeproject/commit/ff9cf08ac5acc56f3ea1a72130453077977befa3))
+* **main:** release 4.7.0 ([0c00850](https://github.com/edogggy/aeproject/commit/0c00850bbe19ba524a94908effe28fb2390e5b12))
+* **main:** release 4.8.0 ([bcba185](https://github.com/edogggy/aeproject/commit/bcba185c8ba16a23952a9d21e48fa7aa68e3e938))
+* **main:** release 4.8.1 ([7590118](https://github.com/edogggy/aeproject/commit/75901189d516a462c1b752c169ba435b81f8cc52))
+* **main:** release 4.8.2 ([fdcb935](https://github.com/edogggy/aeproject/commit/fdcb935bec55d4889cdc260b1b5ac3dcc6a712fa))
+* **main:** release 4.8.3 ([9ab64a5](https://github.com/edogggy/aeproject/commit/9ab64a5a724fd19462a0906a2b21ecf856510c18))
+* **main:** release 4.9.0 ([#506](https://github.com/edogggy/aeproject/issues/506)) ([cf3ab46](https://github.com/edogggy/aeproject/commit/cf3ab46601f2325609107b8108b805827c5c4a1b))
+* **main:** release 4.9.1 ([#508](https://github.com/edogggy/aeproject/issues/508)) ([1873974](https://github.com/edogggy/aeproject/commit/18739740d7fed3aa566e4ee009e1d7faa76c422e))
+* **main:** release 5.0.0 ([#514](https://github.com/edogggy/aeproject/issues/514)) ([9a66b74](https://github.com/edogggy/aeproject/commit/9a66b745a1df48d8b8912afff6c333feb2c46214))
+* prepare for 4.0.0 release ([9da6a85](https://github.com/edogggy/aeproject/commit/9da6a8594378ecefbd7fc32a8e9b9caeed8d0a04))
+* prepare for 4.1.0 release ([045f61e](https://github.com/edogggy/aeproject/commit/045f61eb21860267d720593e76fba5570b794c0b))
+* prepare for fix release 4.8.1 ([b448b44](https://github.com/edogggy/aeproject/commit/b448b445b0d151059fd88a0436e71599be042aad))
+* prepare for release 4.6.0 ([9910426](https://github.com/edogggy/aeproject/commit/991042609f05df8cb62a82383b824c2c9cf764f5))
+* prepare for release 4.8.0 ([5462ea3](https://github.com/edogggy/aeproject/commit/5462ea35234550eaddee2f7590bd3fcd89f00bd7))
+* **release:** 3.0.5 ([dfbc947](https://github.com/edogggy/aeproject/commit/dfbc947424f8064b9d3423a296065fefb42a9eb3))
+* remove deprecated version in docker-compose.yml ([d04f2cc](https://github.com/edogggy/aeproject/commit/d04f2cc60794924bbb0899d6a41a1ec9507de838))
+* remove unneeded await ([cf4b19e](https://github.com/edogggy/aeproject/commit/cf4b19e26949fa660f35efdbbad2322ba0718a66))
+* **repo:** add commitlint and release-please ([00d08ba](https://github.com/edogggy/aeproject/commit/00d08bab4e8711048e23c2367f56a584f5fe7c3d))
+* **repo:** add issue template and action docs generation ([7fc04cc](https://github.com/edogggy/aeproject/commit/7fc04cc0b690b5658889f20d9487bb97a2c1d13c))
+* **repo:** re-add license ([85f29c9](https://github.com/edogggy/aeproject/commit/85f29c96434324768188c7c60d9845f0f53c7fad))
+* rollback unintended code-style changes ([a4fd777](https://github.com/edogggy/aeproject/commit/a4fd777eb736709a04cf613905a2476a1f1d71d4))
+* **tests:** happy path tests (without assertions) ([f8e3e3f](https://github.com/edogggy/aeproject/commit/f8e3e3f7949b7a7daf6b0b5ff0d4872a8f86af47))
+* **tests:** improved env to wait for node to come up ([0992920](https://github.com/edogggy/aeproject/commit/0992920a66365ba950c3a9a099905448e9553fff))
+* **tests:** more test cases ([28e0859](https://github.com/edogggy/aeproject/commit/28e0859b118d70eefd12855e760d8f291982ecdb))
+* update compatible node version ([97bef2c](https://github.com/edogggy/aeproject/commit/97bef2c9f7fd157f3dd07e8508b299f229b84e1d))
+* update default compiler tag ([068b081](https://github.com/edogggy/aeproject/commit/068b081dd7e590955c848b95622b217673670cb0))
+* update dependencies ([6494ded](https://github.com/edogggy/aeproject/commit/6494ded4a78e44d512f4a927346f0ac1bf54cc30))
+* update dependencies ([1cfc5ba](https://github.com/edogggy/aeproject/commit/1cfc5bae8a157f1c008325367953a5f043331580))
+* update dependencies ([eee28ef](https://github.com/edogggy/aeproject/commit/eee28ef31829ee96df2a427d9bdda8784c78bc8a))
+* update dependencies ([5faaf66](https://github.com/edogggy/aeproject/commit/5faaf66454aea01f1861636c723991723c5dd624))
+* update dependencies ([78be83d](https://github.com/edogggy/aeproject/commit/78be83d76e742be16e737ce3e4466425a622b97d))
+* update dependencies ([fb1578c](https://github.com/edogggy/aeproject/commit/fb1578cd9f0ac2eac6109156a56a69e6f183ed41))
+* update dependencies ([e88b1df](https://github.com/edogggy/aeproject/commit/e88b1df37c31a78be4e59e97c4aa80a3620b26ef))
+* update dependencies ([5650a31](https://github.com/edogggy/aeproject/commit/5650a3159b4f6616add03d1ba58488e2a792fac4))
+* update dependencies ([397c3c5](https://github.com/edogggy/aeproject/commit/397c3c5a36d7e5ce6b5d36a0aea964ef07158494))
+* update dependencies ([c42c2e4](https://github.com/edogggy/aeproject/commit/c42c2e4c2e6e9a4d00e6c39362a71fa079a7cdbb))
+* update dependencies, add lint check ([adc54a4](https://github.com/edogggy/aeproject/commit/adc54a4fab041bd26b5039b8dc71905c274e420d))
+* update dependency versions, temp fix ci ([e53bcca](https://github.com/edogggy/aeproject/commit/e53bcca602b79612704dc396ef377e187b62a279))
+* update eslint ([db4f3e5](https://github.com/edogggy/aeproject/commit/db4f3e5c0f606085e1b1d31a93682e958cafab1f))
+* update node, sdk & compiler version ([c625c38](https://github.com/edogggy/aeproject/commit/c625c38516429ffc65c8924da88a27303dfc4f10))
+* update release please ci action ([aa56ac6](https://github.com/edogggy/aeproject/commit/aa56ac6b9a5c38d15bc5cd7c1d8e2a7d86200672))
+* update sdk ([f666101](https://github.com/edogggy/aeproject/commit/f6661011629a7f23bae017987ea82951ac433cae))
+* update to latest compiler ([e65237c](https://github.com/edogggy/aeproject/commit/e65237c7bb79795e557ad6c6f99e6433835fbe46))
+* update to lockfile v2 ([0e3e3ee](https://github.com/edogggy/aeproject/commit/0e3e3eebf6e7081d942d0a5cc4acf51012bd6d14))
+* update to node v6.8.1 ([f247730](https://github.com/edogggy/aeproject/commit/f247730c5f51b910ae962e3a8ef97d7add799c0a))
+* update version, use fixed node image ([bf92a20](https://github.com/edogggy/aeproject/commit/bf92a20ab569b0061e5f87884df812b17340d608))
+* update version, use latest bundle image ([3b5cc81](https://github.com/edogggy/aeproject/commit/3b5cc816a7441f0e0d4935db3090c6a6e5aa08a3))
+* upgrade dependencies ([6f570b3](https://github.com/edogggy/aeproject/commit/6f570b3d7f06154ee9c1e80e105049204871d557))
+* upgrade dependencies ([03a0caa](https://github.com/edogggy/aeproject/commit/03a0caa5da4e32a5e1e2b8e0f028baafb7853ca7))
+* upgrade dependencies ([3482f75](https://github.com/edogggy/aeproject/commit/3482f7504de2714a24416701d59a876f345579ea))
+* upgrade node to v6.11.0 with devmode timout fix ([3c5d558](https://github.com/edogggy/aeproject/commit/3c5d558002ca0e2c1cdbc366a29f41eed7cd7cb8))
+* upgrade sdk and docker for next versions ([63b0fb2](https://github.com/edogggy/aeproject/commit/63b0fb2d3867c1a8aa108fc036a9fb334282a3a4))
+* upgrade support latest aeternity node ([afd36a5](https://github.com/edogggy/aeproject/commit/afd36a51cd1a9f8f8bd5952c90712f42e44b3697))
+* upgrade to chai@5 for new projects ([dce8f50](https://github.com/edogggy/aeproject/commit/dce8f5051878895da1c1350b2256b158d77a60ea))
+* upgrade to final release sdk ([2317283](https://github.com/edogggy/aeproject/commit/23172835bec6e9db4aa83cbbb0ad88322c228aaf))
+* upgrade to latest sdk ([6de93f6](https://github.com/edogggy/aeproject/commit/6de93f69f6c3e29685b76a6de756520e7260cfba))
+* use `npm pack` in tests ([e82cd51](https://github.com/edogggy/aeproject/commit/e82cd517cb1f99fc24ba4d0d26876f012400d9e0))
+* use the same sdk ([a90943e](https://github.com/edogggy/aeproject/commit/a90943e913ccde538b3e8872ae759211125aea37))
+
 ## [5.0.0](https://github.com/aeternity/aeproject/compare/v4.10.2...v5.0.0) (2024-12-06)
 
 
